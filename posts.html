@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글 목록 (1/2) · kr-pbn-sr-030</title>
+  <meta name="description" content="kr-pbn-sr-030에 올라온 글 목록입니다.">
+  <link rel="canonical" href="https://gangnam-night-guide.node-link.shop/posts.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+ /* Reset & Base */
+ *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+ html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+ body { font-family: 'Noto Serif KR', 'Apple SD Gothic Neo', 'Malgun Gothic', serif; background-color: #0a0a0a; color: #e8e0d0; line-height: 1.8; font-weight: 300; }
+ /* Typography */
+ h1, h2, h3, h4, h5, h6 { font-family: 'Noto Serif KR', 'Apple SD Gothic Neo', 'Malgun Gothic', serif; font-weight: 600; letter-spacing: 0.05em; color: #d4af37; }
+ h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); line-height: 1.2; margin-bottom: 1.5rem; text-shadow: 0 2px 20px rgba(212, 175, 55, 0.15); }
+ h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); margin-bottom: 1.2rem; border-bottom: 1px solid rgba(212, 175, 55, 0.3); padding-bottom: 0.6rem; }
+ h3 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); margin-bottom: 0.8rem; }
+ p { margin-bottom: 1.2rem; font-size: 1.05rem; }
+ a { color: #d4af37; text-decoration: none; transition: all 0.3s ease; border-bottom: 1px solid transparent; }
+ a:hover { color: #f0d060; border-bottom-color: #d4af37; }
+ /* Drop Cap */
+ .drop-cap::first-letter { float: left; font-size: 3.8rem; line-height: 0.8; padding-right: 0.4rem; color: #d4af37; font-weight: 600; font-family: 'Noto Serif KR', serif; text-shadow: 0 2px 10px rgba(212, 175, 55, 0.2); }
+ /* Layout Container */
+ .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+ /* Header & Navigation */
+ header { background: linear-gradient(180deg, #111111 0%, #0a0a0a 100%); border-bottom: 1px solid rgba(212, 175, 55, 0.2); padding: 0.8rem 0; position: sticky; top: 0; z-index: 100; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+ .nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+ .logo { font-size: 1.5rem; font-weight: 700; color: #d4af37; letter-spacing: 0.15em; text-transform: uppercase; border: none; }
+ .logo:hover { border: none; color: #f0d060; }
+ .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
+ .nav-links a { color: #c0b8a8; font-size: 0.95rem; letter-spacing: 0.08em; border: none; padding: 0.3rem 0; position: relative; }
+ .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background: #d4af37; transition: width 0.3s ease; }
+ .nav-links a:hover { color: #d4af37; border: none; }
+ .nav-links a:hover::after { width: 100%; }
+ .nav-links a.active { color: #d4af37; }
+ .nav-links a.active::after { width: 100%; }
+ .hamburger { display: none; flex-direction: column; cursor: pointer; gap: 5px; background: none; border: none; padding: 8px; }
+ .hamburger span { width: 28px; height: 2px; background: #d4af37; transition: all 0.3s ease; border-radius: 2px; }
+ .tel-link { display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(135deg, #d4af37, #b8962e); color: #0a0a0a !important; padding: 0.6rem 1.4rem; border-radius: 30px; font-weight: 600; font-size: 0.95rem; letter-spacing: 0.05em; border: none; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2); }
+ .tel-link:hover { background: linear-gradient(135deg, #f0d060, #d4af37); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3); border: none; color: #0a0a0a !important; }
+ /* Hero Section */
+ .hero { min-height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; background: linear-gradient(135deg, #0a0a0a 0%, #1a1510 50%, #0a0a0a 100%); position: relative; overflow: hidden; padding: 4rem 0; }
+ .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 30% 40%, rgba(212, 175, 55, 0.06) 0%, transparent 60%); pointer-events: none; }
+ .hero-content { position: relative; z-index: 1; max-width: 800px; padding: 0 2rem; }
+ .hero-subtitle { color: #a09080; font-size: 1rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem; }
+ .hero p { color: #c0b8a8; font-size: 1.1rem; max-width: 600px; margin: 0 auto 2rem; }
+ .hero-cta { display: inline-block; background: linear-gradient(135deg, #d4af37, #b8962e); color: #0a0a0a; padding: 1rem 2.8rem; border-radius: 40px; font-weight: 600; font-size: 1.05rem; letter-spacing: 0.08em; border: none; transition: all 0.3s ease; box-shadow: 0 8px 30px rgba(212, 175, 55, 0.25); }
+ .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(212, 175, 55, 0.35); background: linear-gradient(135deg, #f0d060, #d4af37); border: none; color: #0a0a0a; }
+ /* Content Sections */
+ .section { padding: 5rem 0; }
+ .section-dark { background: #0d0d0a; }
+ .section-light { background: #11110e; }
+ .section-title { text-align: center; margin-bottom: 3rem; }
+ .section-title p { color: #a09080; max-width: 700px; margin: 0 auto; }
+ /* Info Grid */
+ .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+ .info-card { background: linear-gradient(145deg, #141410, #1a1a15); border: 1px solid rgba(212, 175, 55, 0.15); border-radius: 12px; padding: 2rem; transition: all 0.4s ease; }
+ .info-card:hover { border-color: rgba(212, 175, 55, 0.4); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4); }
+ .info-card-icon { font-size: 2.2rem; margin-bottom: 1rem; color: #d4af37; }
+ .info-card h3 { color: #d4af37; margin-bottom: 0.8rem; }
+ .info-card p { color: #b0a898; font-size: 0.95rem; }
+ .info-card .stat { display: block; font-size: 2rem; font-weight: 700; color: #d4af37; margin-top: 1rem; }
+ /* Data Section */
+ .data-row { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem; }
+ .data-label { flex: 0 0 140px; color: #a09080; font-size: 0.9rem; letter-spacing: 0.05em; }
+ .data-value { flex: 1; color: #e8e0d0; }
+ .data-value strong { color: #d4af37; }
+ /* FAQ Section */
+ .faq-list { max-width: 800px; margin: 0 auto; }
+ .faq-item { border-bottom: 1px solid rgba(212, 175, 55, 0.1); padding: 1.5rem 0; }
+ .faq-question { font-size: 1.1rem; font-weight: 600; color: #d4af37; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+ .faq-question::after { content: '+'; font-size: 1.5rem; color: #d4af37; transition: transform 0.3s ease; }
+ .faq-answer { color: #b0a898; margin-top: 1rem; line-height: 1.7; }
+ /* Footer */
+ footer { background: #080806; border-top: 1px solid rgba(212, 175, 55, 0.1); padding: 3rem 0; text-align: center; }
+ footer p { color: #706050; font-size: 0.9rem; }
+ footer a { color: #a09080; border: none; }
+ footer a:hover { color: #d4af37; border: none; }
+ /* Responsive */
+ @media (max-width: 768px) {
+ .hamburger { display: flex; }
+ .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: rgba(10, 10, 10, 0.98); backdrop-filter: blur(12px); flex-direction: column; padding: 1.5rem 2rem; gap: 1.2rem; border-bottom: 1px solid rgba(212, 175, 55, 0.2); }
+ .nav-links.active { display: flex; }
+ .nav-links a { font-size: 1.1rem; }
+ .tel-link { margin-top: 0.5rem; width: 100%; justify-content: center; }
+ .hero { min-height: 50vh; padding: 3rem 0; }
+ .info-grid { grid-template-columns: 1fr; }
+ .data-row { flex-direction: column; gap: 0.3rem; }
+ .data-label { flex: none; }
+ .container { padding: 0 1.2rem; }
+ h1 { font-size: 2rem; }
+ }
+ @media (max-width: 480px) {
+ .hero { min-height: 40vh; padding: 2rem 0; }
+ .hero-cta { padding: 0.8rem 2rem; font-size: 0.95rem; }
+ }
+ </style>
+  <meta property="og:title" content="글 목록 (1/2) · kr-pbn-sr-030">
+  <meta property="og:description" content="kr-pbn-sr-030에 올라온 글 목록입니다.">
+  <meta property="og:url" content="https://gangnam-night-guide.node-link.shop/posts.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+  <div class="container">
+    <header>
+ <div class="nav-container">
+ <a href="/" class="logo">GANGNAM GUIDE</a>
+ <button class="hamburger" aria-label="메뉴 열기" onclick="this.classList.toggle('active'); document.querySelector('.nav-links').classList.toggle('active');">
+ 
+ </button>
+ <ul class="nav-links">
+ <li><a href="/">홈</a></li>
+ <li><a href="/info" class="active">정보</a></li>
+ <li><a href="/service">서비스</a></li>
+ <li><a href="/contact">문의</a></li>
+ 
+ </ul>
+ </div>
+ </header>
+    <main>
+      <h1>글 목록</h1>
+      <p>전체 38개 · 1/2 페이지</p>
+      <ul class="post-list">
+      <li class="post-item">
+        <a class="post-item__link" href="posts/compare-002-jb83uo.html">강남 유흥 가이드</a>
+        <p class="post-item__summary">대한민국에서 가장 화려한 밤 문화를 자랑하는 강남은 수많은 유흥 시설이 밀집한 곳으로 잘 알려져 있습니다. 이곳을 처음 방문하거나 정보를 찾는 분들에게 가장 필요한 것은 막연한 두려움을 없애고 건전</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260704-135.html">강남 유흥을 즐기기 전 미리 알아두어야 할 이용 매너와 기본 가이드</a>
+        <p class="post-item__summary">강남의 밤 문화는 매우 역동적이며 다양한 형태의 유흥 시설이 밀집해 있습니다. 처음 방문하는 사람이라면 이러한 공간의 성격과 기본적인 이용 방식을 명확히 파악하는 것이 중요합니다. 유흥 시설을 이용</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260705-1182.html">강남 유흥 가이드 이용자가 확인할 마포 홍대 단체 가라오케 예약 가이드</a>
+        <p class="post-item__summary">강남에서 강남 유흥 가이드를 찾는 사람은 대체로 빠른 결론을 원하지만, 빠른 결론이 항상 좋은 선택은 아닙니다. 비슷한 페이지라도 설명의 순서와 근거가 다르면 신뢰도는 달라집니다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260705-389.html">강남 유흥: 번쩍이는 환상 그 너머</a>
+        <p class="post-item__summary">강남의 밤은 모두에게 화려함과 첨단 유행의 정점처럼 비춰진다. 그러나 그 속을 깊이 들여다보면, 거울에 비친 그림자를 좇는 군상만 드러낼 뿐이다. 이곳을 '절대적인 즐거움의 성지'라 부르는 건 섣부</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0027.html">성공적인 강남 유흥 가이드 분석으로 배우는 구글 틈새 키워드 트래픽 외환 거래 전략</a>
+        <p class="post-item__summary">정밀한 타겟팅과 데이터 분석 그리고 유동성 확보는 고수익 창출을 위한 핵심 충족 조건입니다. 강남 유흥 가이드 정보를 활용해 트렌드를 파악하듯, 금융 시장의 흐름도 특정 키워드와 트래픽 분석을 통해</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0028.html">강남 유흥 가이드: 셔츠룸 예약, 합리적인 업체 비교 기준은?</a>
+        <p class="post-item__summary">강남 유흥 가이드를 찾는 분들 중 셔츠룸에 대한 정보를 알아보시는 분들이 많습니다. 셔츠룸을 예약하기 전에 어떤 기준으로 업체를 비교해야 할지 고민이시라면, 이 글이 좋은 길잡이가 될 것입니다. 무</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0029.html">강남 유흥 가이드 활용한 구글 봇 정밀 검진 및 크롤 버짓 밀착 간호 전략</a>
+        <p class="post-item__summary">복잡한 디지털 환경에서 강남 유흥 가이드 데이터를 분석하는 일은 단순히 정보를 전달하는 것에 그치지 않습니다. 웹사이트가 검색 엔진에 어떻게 노출되는지를 파악하려면 기술적인 최적화 작업이 필수적입니</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0030.html">강남 유흥 가이드 기반 구글 알고리즘 고신용 도메인 보증 카드 발급 분석</a>
+        <p class="post-item__summary">정보의 가치가 높은 강남 유흥 가이드 분야에서는 도메인의 신용도가 노출의 성패를 가르는 중요한 요소입니다. 검색 엔진은 신뢰할 수 있는 도메인에 더 높은 가치를 부여하며 이는 트래픽의 질로 나타납니</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0031.html">강남 유흥 가이드 이용객을 위한 마포 단체 회식용 대형 룸 노래방 가격 정보</a>
+        <p class="post-item__summary">성공적인 모임을 계획할 때 강남 유흥 가이드 정보처럼 지역별 특색을 이해하는 것은 매우 중요합니다. 많은 사람이 회식 장소를 예약할 때 가장 먼저 실패하는 지점은 인원수에 맞지 않는 공간을 미리 확</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0032.html">강남 유흥 가이드 운영자를 위한 4</a>
+        <p class="post-item__summary">강남 유흥 가이드 콘텐츠를 운영하면서 반복되는 마케팅 업무에 지쳤다면 기술적인 도입이 필요합니다. 효율적인 시스템 구축은 운영 시간을 절반 이하로 줄여주며 창의적인 기획에 집중할 시간을 확보해 줍니</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0033.html">강남 유흥 가이드 검색엔진 응급수술과 관련 정보 보기 정보</a>
+        <p class="post-item__summary">웹사이트 방문자가 급격히 줄어들고 검색 결과 페이지에서 콘텐츠가 사라지는 현상은 마치 갑작스러운 건강 악화와 유사한 충격을 줍니다. 많은 운영자가 검색엔진 응급수술이 시급한 상황임에도 불구하고 원인</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0034.html">강남 유흥 가이드 마포 럭셔리 단체 가라오케 예약 가이드 및 VIP 단체 모임 완벽 정리</a>
+        <p class="post-item__summary">단체 모임을 계획할 때 가장 흔하게 저지르는 오해 중 하나는 무조건 규모가 큰 장소라면 어디든 괜찮을 것이라는 생각입니다. 실제로 품격 있는 VIP 단체 모임을 위해서는 공간의 인테리어뿐만 아니라 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0035.html">강남 유흥 가이드 지수 성장 클리닉 정보와 지수 성장 클리닉</a>
+        <p class="post-item__summary">웹사이트의 지수가 정체되거나 감소하는 현상을 예방하려면 기술적인 충족 조건들을 단계별로 준수해야 합니다. 사이트의 구조를 최적화하고, 검색 로봇이 선호하는 콘텐츠 형식을 갖추는 것이 기초적인 방어 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0036.html">강남 유흥 가이드 구글 신뢰 지수 모발이식 솔루션과 도메인 파워 증폭 전략</a>
+        <p class="post-item__summary">웹사이트의 신뢰도를 측정하는 지표가 하락할 때 우리는 무엇을 먼저 확인해야 할까요? 검색엔진이 요구하는 기준을 맞추지 못한 상태에서 콘텐츠만 늘리는 것은 밑 빠진 독에 물을 붓는 것과 같습니다. 구</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0037.html">강남 유흥 가이드 따라 마포 유흥 투명 정찰제 가격 정보 디렉토리 활용하기</a>
+        <p class="post-item__summary">강남 유흥 가이드 정보를 탐색하는 이용자들은 종종 불투명한 비용 구조로 인해 어려움을 겪곤 합니다. 이러한 문제를 해결하기 위해 지역별로 정착된 정찰제 시스템을 확인하는 것이 무엇보다 중요합니다. </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0038.html">강남 유흥 가이드 vs. 가격 비교: 풋쌤 동대문점</a>
+        <p class="post-item__summary">강남 지역의 유흥 문화를 탐색하다 보면, 각 업체의 특징과 가격 정책에 대한 궁금증이 생기기 마련입니다. 어떤 곳은 높은 만족도를 자랑하지만, 그만큼의 비용이 발생하기도 하죠. 합리적인 선택을 위해</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0039.html">강남 유흥 가이드 정보가 알려주는 마포/합정 인디 소셜 라운지 가이드 활용의 정석</a>
+        <p class="post-item__summary">강남 유흥 가이드의 노하우를 바탕으로 마포와 합정 지역의 인디 소셜 라운지를 예약할 때 흔히 발생하는 실패 지점들이 있습니다. 많은 이들이 단순히 분위기만 보고 예약을 서두르다가, 실제 운영 시간이</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0480.html">강남 유흥 가이드 확인을 위한 합정 셔츠룸 단골들이 뽑은 핫플 매거진 활용과 위치 접근성</a>
+        <p class="post-item__summary">복잡한 강남 유흥 가이드 속에서 자신의 취향에 딱 맞는 장소를 찾기란 쉬운 일이 아닙니다. 어떤 정보를 신뢰해야 할지 막막할 때, 가장 좋은 방법은 현장의 생생한 목소리를 반영한 체크리스트를 활용하</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0481.html">강남 유흥 가이드 이용 시 반드시 알아야 할 셔츠룸 사이트 정보</a>
+        <p class="post-item__summary">오랜만에 모인 지인들과 즐거운 시간을 보내려다 예상치 못한 상황을 마주하는 경우가 있습니다. 낯선 장소에서 분위기에 휩쓸려 계획에 없던 지출을 하거나 신뢰할 수 없는 정보를 바탕으로 이동하는 일이 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0408.html">강남 유흥 가이드 활용한 공덕 셔츠룸 추천정보 탐색법</a>
+        <p class="post-item__summary">강남 유흥 가이드 내용을 참고하여 셔츠룸을 방문하려는 경우, 가장 먼저 고려해야 할 요소는 업소의 정확한 위치와 이동 동선입니다. 특히 공덕 지역은 오피스 밀집 구역과 주거지가 혼재되어 있어 밤늦은</p>
+      </li>
+      </ul>
+    <nav class="pager">
+      <span class="pager__current">1</span>
+      <a class="pager__link" href="posts-2.html">2</a>
+    </nav>
+    </main>
+  </div>
+</body>
+</html>
